@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">K22411CASampleProject</string>
+    <string name="title_login_username">User name:</string>
+    <string name="title_login_username_hint">Enter your username</string>
+    <string name="title_login_password">Password:</string>
+    <string name="title_login_save_infor">Save login infor</string>
+    <string name="title_login__button">Login</string>
+    <string name="title_confirm_exit_title">Confirm Exit</string>
+    <string name="title_confirm_exit_messages">Are you sure u want to exit?</string>
+    <string name="title_confirm_exit_cancel">Cancel</string>
+    <string name="title_employee">Employee</string>
+    <string name="title_customer">Customer</string>
+    <string name="title_healthcare">Healthcare</string>
+    <string name="title_salary">Salary</string>
+    <string name="title_activity_employee_healthcare">Employee Healthcare</string>
+    <string name="title_healthcare_height">Height:</string>
+    <string name="title_healthcare_weight">Weight:</string>
+    <string name="title_button_healthcare_calculate">Calculate</string>
+    <string name="title_healthcare_button_clear" />
+    <string name="button_healthcare_clear">Clear</string>
+    <string name="button_healthcare_close">Close</string>
+</resources>
