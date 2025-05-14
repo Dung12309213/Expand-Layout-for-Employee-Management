@@ -9,11 +9,13 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <!-- Cột đầu tiên: LinearLayout với ImageView và TextView -->
             <LinearLayout
@@ -33,6 +35,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/title_employee"
+                    android:textAlignment="center"
                     android:textSize="24sp" />
             </LinearLayout>
 
@@ -44,16 +47,68 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imgEmployee"
+                    android:id="@+id/imgCustomer"
                     android:layout_width="match_parent"
                     android:layout_height="169dp"
                     app:srcCompat="@mipmap/ic_customer" />
 
                 <TextView
-                    android:id="@+id/txtEmployee"
+                    android:id="@+id/txtCustomer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/title_customer"
+                    android:textAlignment="center"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Cột đầu tiên: LinearLayout với ImageView và TextView -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="169dp"
+                    app:srcCompat="@mipmap/ic_cateogies"
+                   />
+
+                <TextView
+                    android:id="@+id/txtCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_category"
+                    android:textAlignment="center"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <!-- Cột thứ hai (Nếu bạn muốn thêm cột khác, thêm một LinearLayout ở đây tương tự) -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgProduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="169dp"
+                    app:srcCompat="@mipmap/ic_product" />
+
+                <TextView
+                    android:id="@+id/txtProduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_product"
+                    android:textAlignment="center"
                     android:textSize="24sp" />
             </LinearLayout>
 

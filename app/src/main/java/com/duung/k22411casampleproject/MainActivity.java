@@ -14,9 +14,14 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-
-        ImageView imgEmployee;
-        TextView txtEmployee;
+    ImageView imgEmployee;
+    TextView txtEmployee;
+    ImageView imgCustomer;
+    TextView txtCustomer;
+    ImageView imgCategory;
+    TextView txtCategory;
+    ImageView imgProduct;
+    TextView txtProduct;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,31 +38,47 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addView() {
-        imgEmployee=findViewById(R.id.imgEmployee);
-                txtEmployee=findViewById((R.id.txtEmployee));
+        imgEmployee = findViewById(R.id.imgEmployee);
+        txtEmployee = findViewById(R.id.txtEmployee);
+        imgCustomer = findViewById(R.id.imgCustomer);
+        txtCustomer = findViewById(R.id.txtCustomer);
+        imgCategory = findViewById(R.id.imgCategory);
+        txtCategory = findViewById(R.id.txtCategory);
+        imgProduct = findViewById(R.id.imgProduct);
+        txtProduct = findViewById(R.id.txtProduct);
     }
 
     private void addEvents() {
-        imgEmployee.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //gọi code mở màn hình quản trị Nhân sự
-                openEmployeeManagementActivity();
-            }
-        });
-        txtEmployee.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openEmployeeManagementActivity();
-            }
+        imgEmployee.setOnClickListener(v -> openEmployeeManagementActivity());
+        txtEmployee.setOnClickListener(v -> openEmployeeManagementActivity());
 
-            
-        });
-    }
-    private void openEmployeeManagementActivity()
-    {
-        Intent intent=new Intent(MainActivity.this, EmployeeManagementActivity.class);startActivity(intent);
-    }
+        imgCustomer.setOnClickListener(v -> openCustomerManagementActivity());
+        txtCustomer.setOnClickListener(v -> openCustomerManagementActivity());
+
+        imgCategory.setOnClickListener(v -> openCategoryManagementActivity());
+        txtCategory.setOnClickListener(v -> openCategoryManagementActivity());
+
+        imgProduct.setOnClickListener(v -> openProductManagementActivity());
+        txtProduct.setOnClickListener(v -> openProductManagementActivity());
     }
 
+    private void openEmployeeManagementActivity() {
+        Intent intent = new Intent(MainActivity.this, EmployeeManagementActivity.class);
+        startActivity(intent);
+    }
 
+    private void openCustomerManagementActivity() {
+        Intent intent = new Intent(MainActivity.this, CustomerManagementActivity.class);
+        startActivity(intent);
+    }
+
+    private void openCategoryManagementActivity() {
+        Intent intent = new Intent(MainActivity.this, CategoryManagementActivity.class);
+        startActivity(intent);
+    }
+
+    private void openProductManagementActivity() {
+        Intent intent = new Intent(MainActivity.this, ProductManagementActivity.class);
+        startActivity(intent);
+    }
+}
