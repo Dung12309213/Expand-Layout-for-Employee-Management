@@ -1,46 +1,80 @@
 package com.duung.k22411casampleproject;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Spinner;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
+import com.duung.model.Category;
+import com.duung.model.ListCategory;
 import com.duung.model.Product;
-import com.duung.model.ListProduct;
+
+import java.util.ArrayList;
 
 public class ProductManagementActivity extends AppCompatActivity {
+
+    Spinner spinnerCategory;
     ListView lvProduct;
-    ArrayAdapter<Product> adapter;
-    ListProduct lproduct = new ListProduct();
+
+    ArrayAdapter<Category> categoryAdapter;
+    ArrayAdapter<Product> productAdapter;
+
+    ListCategory listCategory = new ListCategory();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_product_management);
-        addViews();
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        listCategory.generateDataset();
+
+        addViews();
+        addEvents();
     }
 
     private void addViews() {
+        spinnerCategory = findViewById(R.id.spinnerCategory);
         lvProduct = findViewById(R.id.lvProduct);
 
-        adapter = new ArrayAdapter<>(
-                ProductManagementActivity.this,
-                android.R.layout.simple_list_item_1);
 
-        lproduct.generate_sample_dataset();
-        adapter.addAll(lproduct.getProducts());
-        lvProduct.setAdapter(adapter);
+        categoryAdapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_spinner_item,
+                listCategory.getCategories()
+        );
+        categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerCategory.setAdapter(categoryAdapter);
+
+
+        productAdapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_list_item_1,
+                new ArrayList<>()
+        );
+        lvProduct.setAdapter(productAdapter);
+    }
+
+    private void addEvents() {
+        spinnerCategory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Category selectedCategory = categoryAdapter.getItem(position);
+                if (selectedCategory != null) {
+                    productAdapter.clear();
+                    productAdapter.addAll(selectedCategory.getProducts());
+                    productAdapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                productAdapter.clear();
+                productAdapter.notifyDataSetChanged();
+            }
+        });
     }
 }

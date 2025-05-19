@@ -35,7 +35,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- MainActivity không cần intent-filter nếu nó không phải là màn hình khởi động -->
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true" />

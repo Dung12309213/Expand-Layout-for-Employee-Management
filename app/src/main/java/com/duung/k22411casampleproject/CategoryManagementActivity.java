@@ -23,7 +23,7 @@ public class CategoryManagementActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_category_management);
-        addViews();  // ✅ Gọi hàm để hiển thị dữ liệu
+        addViews();  //
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -33,14 +33,14 @@ public class CategoryManagementActivity extends AppCompatActivity {
     }
 
     private void addViews() {
-        lvCategory = findViewById(R.id.lvCategory);  // ✅ Đảm bảo ID này tồn tại trong XML
+        lvCategory = findViewById(R.id.lvCategory);
 
         Adapter = new ArrayAdapter<>(
                 CategoryManagementActivity.this,
                 android.R.layout.simple_list_item_1);
 
-        lcate.generate_sample_dataset();
+        lcate.generateDataset();
         Adapter.addAll(lcate.getCategories());
-        lvCategory.setAdapter(Adapter);  // ✅ Gắn adapter vào ListView
+        lvCategory.setAdapter(Adapter);
     }
 }

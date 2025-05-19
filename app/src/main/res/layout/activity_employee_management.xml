@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!-- ✅ TableRow 1 - GIỮ NGUYÊN ID -->
+
             <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
 
                 <LinearLayout
@@ -62,7 +62,6 @@
                 </LinearLayout>
             </TableRow>
 
-            <!-- ✅ TableRow 2 – Không có ID hoặc dùng id khác -->
             <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
                 <LinearLayout
                     android:layout_width="0dp"
@@ -102,7 +101,7 @@
                 </LinearLayout>
             </TableRow>
 
-            <!-- ✅ TableRow 3 – Tương tự -->
+
             <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
                 <LinearLayout
                     android:layout_width="0dp"
