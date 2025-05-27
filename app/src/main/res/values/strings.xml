@@ -41,4 +41,6 @@
     <string name="title_product_quantity">Product Quantity</string>
     <string name="title_cate_id">Cate ID</string>
     <string name="Product_Detail">Product Detail</string>
+    <string name="title_add_product">Add Product</string>
+    <string name="Promote">Promote</string>
 </resources>

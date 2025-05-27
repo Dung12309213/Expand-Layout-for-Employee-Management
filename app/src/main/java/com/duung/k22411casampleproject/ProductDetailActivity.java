@@ -26,7 +26,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         edtProductCateID = findViewById(R.id.edtProductCateID);
 
         // Get product from intent
-        Product product = (Product) getIntent().getSerializableExtra("product");
+        Product product = (Product) getIntent().getSerializableExtra("SELECTED_PRODUCT");
 
         // Show product info
         if (product != null) {
